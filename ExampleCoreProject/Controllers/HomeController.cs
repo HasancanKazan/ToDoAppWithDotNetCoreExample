@@ -23,9 +23,9 @@ namespace ExampleCoreProject.Controllers
             return View();
         }
 
-        public IActionResult Privacy()
+        public IActionResult ListTask()
         {
-            return View();
+            return View("ListTask", Repository.tasks);
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
@@ -35,10 +35,15 @@ namespace ExampleCoreProject.Controllers
         }
 
 
-
-        public IActionResult AddTask()
+        [HttpPost]
+        public IActionResult AddTask(Models.Task task)
         {
-            return View();
+
+            Repository.AddTask(task);
+
+            return View("ListTask", Repository.tasks);
         }
+
+
     }
 }

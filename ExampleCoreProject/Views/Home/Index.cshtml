@@ -1,41 +1,85 @@
-﻿@{
+﻿@model ExampleCoreProject.Models.Task
+
+@{
     ViewData["Title"] = "Home Page";
 }
 
 
 
-<form action="home/AddTask" method="post" class="text-center">
+<form asp-action="AddTask" method="post" class="form-horizontal">
+    <div class="card">
+        <div class="card-header">
+            <strong>ADD TASK</strong>
+        </div>
+        <div class="row form-group" style="margin-top:2%;">
+            <div class="col col-md-3">
+                <label asp-for="TaskName">Yapılacak İş</label>
+            </div>
+            <div class="col-12 col-md-9">
+                <input asp-for="TaskName" />
+            </div>
+        </div>
+        <hr />
+        <div class="row form-group">
+            <div class="col col-md-3">
+                <label asp-for="TaskDescription">İş Detayı</label>
+            </div>
+            <div class="col-12 col-md-9">
+                <textarea asp-for="TaskDescription"></textarea>
+            </div>
+        </div>
+        <hr />
+        <div class="row form-group">
+            <div class="col col-md-3">
+                <label asp-for="TaskSign">Kim Tarafından Yapılacak</label>
+            </div>
+            <div class="col-12 col-md-9">
+                <input asp-for="TaskSign" />
+            </div>
+        </div>
+        <hr />
+        <div class="row form-group">
+            <div class="col col-md-3">
+                <label asp-for="TaskDate">Teslim Tarihi</label>
+            </div>
+            <div class="col-12 col-md-9">
+                <input asp-for="TaskDate" />
+            </div>
+        </div>
+        <hr />
+        <div class="row form-group">
+            <div class="col col-md-3">
+                <label asp-for="IsDraft">Taslak mı?</label>
+            </div>
+            <div class="col-12 col-md-9">
+                <select asp-for="IsDraft">
+                    <option value="true">Evet</option>
+                    <option value="false">Hayır</option>
+                </select>
+            </div>
+        </div>
+        <hr />
+        <div class="row form-group">
+            <div class="col col-md-3">
+                <label asp-for="CreDate">Oluşturulma Tarihi</label>
+            </div>
+            <div class="col-12 col-md-9">
+                <input asp-for="CreDate">
+            </div>
+        </div>
+        <hr />
+        <div class="row form-group">
+            <div class="col col-md-3">
+                <label asp-for="CreUser">Oluşturan Kişi</label>
+            </div>
+            <div class="col-12 col-md-9">
+                <input asp-for="CreUser" />
+            </div>
+        </div>
 
-    <p>
-        <label for="task">Yapılacak İş</label>
-        <input type="text" name="task" />
-    </p>
-
-    <p>
-        <label for="taskDescription">İş Detayı</label>
-        <textarea name="taskDescription"></textarea>
-    </p>
-
-    <p>
-        <label for="taskSign">Kim Tarafından Yapılacak</label>
-        <input type="text" name="taskSign" />
-    </p>
-
-    <p>
-        <label for="taskDate">Teslim Tarihi</label>
-        <input type="date" name="taskDate" />
-    </p>
-
-    <p>
-        <label for="creDate">Oluşturulma Tarihi</label>
-        <input type="date" name="creDate">
-    </p>
-
-    <p>
-        <label for="creUser">Oluşturan Kişi</label>
-        <input type="text" name="creUser" />
-    </p>
-
-    <input type="submit" navalue="Submit" />
-
+        <button type="submit" class="btn btn-primary btn-sm">
+            <i class="fa fa-dot-circle-o"></i> Save Task
+        </button>
+    </div>
 </form>
+
