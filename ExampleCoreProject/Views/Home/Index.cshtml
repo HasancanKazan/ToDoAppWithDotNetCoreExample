@@ -1,0 +1,41 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+
+<form action="home/AddTask" method="post" class="text-center">
+
+    <p>
+        <label for="task">Yapılacak İş</label>
+        <input type="text" name="task" />
+    </p>
+
+    <p>
+        <label for="taskDescription">İş Detayı</label>
+        <textarea name="taskDescription"></textarea>
+    </p>
+
+    <p>
+        <label for="taskSign">Kim Tarafından Yapılacak</label>
+        <input type="text" name="taskSign" />
+    </p>
+
+    <p>
+        <label for="taskDate">Teslim Tarihi</label>
+        <input type="date" name="taskDate" />
+    </p>
+
+    <p>
+        <label for="creDate">Oluşturulma Tarihi</label>
+        <input type="date" name="creDate">
+    </p>
+
+    <p>
+        <label for="creUser">Oluşturan Kişi</label>
+        <input type="text" name="creUser" />
+    </p>
+
+    <input type="submit" navalue="Submit" />
+
+</form>
